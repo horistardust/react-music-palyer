@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Root from './root';
+import { Provider } from 'react-redux';
+
+import router from './router';
+import store from './store';
+
+import './assets/less/style';
+
 
 ReactDOM.render(
-    <Root/>,
-    document.getElementById('root')
+  <Provider store={store}>
+    {router}
+  </Provider>, document.getElementById('root'),
 );
 
-if (module.hot && process.env.NODE_ENV !== 'production') {
-    module.hot.accept();
-};
